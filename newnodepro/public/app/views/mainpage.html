@@ -1,0 +1,92 @@
+<h1>Hello {{$root.userID}}</h1>
+
+<button class="btn btn-success btn-block btn-lg mb15 btn-signin" ng-click="signOut()"> <span>Logout</span> </button> 
+
+<input type='file' ng-model-instant onchange="angular.element(this).scope().imageUpload(event)" multiple />
+<!--<div class="row">
+    <div class="col-xs-8 chat-window">
+        <ul>
+            <li ng-repeat="message in messages">
+                <span class="username">
+                    {{message.username}}
+                </span>
+                <span class="message">
+                    {{message.message}}
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div class="col-xs-4 user-window">
+        <ul>
+            <li ng-repeat="user in users">
+                {{user}}
+            </li>
+        </ul>
+    </div>
+</div>
+
+<form name="chatform" ng-submit="sendMessage(msg);" novalidate> 
+      <input type="text" name = "userMessage" ng-model="msg"/> 
+      <button type="submit">Send</button>
+</form>-->
+
+
+<div class="fluid-container">
+    <div class="">
+    <!--<h3 class="text-center" >BOOTSTRAP CHAT EXAMPLE </h3>-->
+        <div class="col-md-2 userbox">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                ONLINE USERS 
+            </div>
+            <div class="panel-body tes">
+                <ul class="media-list">                               
+                    <li class="media" ng-repeat="user in users">
+                        <div class="media-body">
+                            <div class="media">
+                                <a class="pull-left">
+                                <!--<img class="media-object img-circle" style="max-height:40px;" src="assets/img/user.png" />-->
+                                </a>
+                                <div class="media-body" >
+                                <h5> {{user}} <span class="fa fa-commenting" style="color:#0099cc"></span> </h5>
+                                <small class="text-muted">Active</small>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10 chatbox">
+        <div class="panel panel-info">
+            <div class="panel-heading">
+                GROUP CHAT BOX
+            </div>
+            <div class="panel-body tes">
+                <ul class="media-list">
+                    <li class="media" ng-repeat="message in messages">
+                         <span class="username">
+                            {{message.username}}
+                        </span>
+                        <span class="message">
+                            {{message.message}}
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-footer">
+                <form name="chatform" ng-submit="sendMessage(msg);" novalidate>
+                     <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Enter Message" ng-model="msg"/>
+                        <span class="input-group-btn">
+                        <button class="btn btn-info" type="submit">SEND</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>  
+    </div>
+</div>
+

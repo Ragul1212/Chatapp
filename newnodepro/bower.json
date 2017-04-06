@@ -1,0 +1,28 @@
+{
+  "name": "newnodepro",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "Ragul1212 <ragul1212@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.0",
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
+    "angular": "^1.6.3",
+    "angular-ui-router": "^0.4.2",
+    "angular-messages": "^1.6.3",
+    "angular-socket-io": "^0.7.0",
+    "bootbox.js": "bootbox#^4.4.0"
+  }
+}

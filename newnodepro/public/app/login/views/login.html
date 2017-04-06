@@ -1,0 +1,39 @@
+<div class="full-height">   
+    <div class="center-wrapper" >
+        <div class="center-content">
+            <div class="row no-margin">
+                <div class="col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+                    <form role="form" name="loginForm" ng-submit="login(loginForm.$valid)" novalidate>
+                    <div class="text-center mb15"> <h1> MEAN  APP - LOGIN</h1> </div>
+                    <p class="text-center mb30 ng-binding">Welcome to Urban. Please sign in to your account</p>
+                    <div class="form-group">
+                        <input required type="email" name="username" ng-model="user.username"
+                        minlength="10" maxlength="100" ng-pattern="/^.+@.+\..+$/" class="form-control" placeholder="Username"/>
+                        <div class="text-danger" ng-show="!loginForm.username.$pristine || loginForm.$submitted" ng-messages="loginForm.username.$error" role="alert">
+                            <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                                Username required.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input required type="password" name="password" ng-model="user.password"
+                        minlength="8" maxlength="20" ng-pattern="/^(?=.*\d)(?=.*[a-zA-Z]).{6,20}$/" class="form-control" placeholder="Password"/>
+                        <div class="text-danger" ng-show="!loginForm.password.$pristine || loginForm.$submitted" ng-messages="loginForm.password.$error" role="alert">
+                            <div ng-message-exp="['required', 'minlength', 'maxlength', 'pattern']">
+                                Password required.
+                            </div>
+                        </div>
+                    </div>
+                    <button class="btn btn-success btn-block btn-lg mb15 btn-signin" type="submit"> <span>Sign in</span> </button> 
+                    <p> <a ui-sref="register">Create an account</a> · <a ui-sref="register">Forgot your password?</a> </p>
+                    </form>
+                    <alert type="{{currentStatus}}" ng-show="currentMessage" class="text-center text-danger" ng-class="'text-'+currentStatus">
+                        <div uib-alert style="margin-top: 5%;" class="alert" ng-class="'alert-'+currentStatus">
+                            <span ng-bind="currentMessage">{{cuurentMessage}}</span>
+                        </div>
+                    </alert>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
