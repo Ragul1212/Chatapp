@@ -1,7 +1,16 @@
 var User = require('../models/user');
+var Chat = require('../models/chats');
 var jwt = require('jsonwebtoken');
 var secret = 'Happy';
 module.exports = function(router) {
+    // Chat Message
+    router.get('/chatmessage', function(req, res){
+        console.log("Chat Message is getting");
+        Chat.find(function(err, docs) {
+            console.log(docs);
+            res.json(docs);
+        });
+    });
     // Register Route
     router.post('/users', function(req, res) {
     var user = new User();
@@ -84,5 +93,6 @@ module.exports = function(router) {
     router.post('/me', function(req, res){
         res.send(req.decoded);
     });
+    
     return router;
 }

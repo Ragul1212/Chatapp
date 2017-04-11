@@ -6,6 +6,9 @@ angular.module('user').factory('UserAccountService', function($http, authToken,$
         getUser = 'api/me',
         dataFactory = {};
 
+
+
+
     //User Signup Service call
     dataFactory.userSignup = function(formData) {        
         return $http.post(userSignup, formData);
